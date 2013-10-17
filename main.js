@@ -2,9 +2,14 @@ var canvas = document.getElementById('mycanvas');
 var ctx = canvas.getContext('2d');
 var x = 0;
 var bacteria = new Bacteria();
-
+var background = new Image();
+background.onload = function(){
+	render();
+};
+background.src = "background.png";
 function render(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
+	ctx.drawImage(background,0,0,canvas.width,canvas.height);
 	bacteria.draw();	
 	requestAnimationFrame(render);
 			
