@@ -18,15 +18,26 @@ function render(){
 function Bacteria(){
 	this.x = 0;
 	this.y = 0;
-	this.speed = 10;
+	this.speed = 5;
 	this.xvel = 1;
 	this.yvel = 1;
 	this.image = new Image();
 	this.image.src = "bacteria.png"
 	this.draw = function() {
-		ctx.drawImage(this.image,this.x - this.image.width/2,this.y - this.image.height/2,this.image.width,this.image.height);
-		this.x += this.xvel;
-		this.y += this.yvel;	
+		var theta = this.rotate(this.xvel,this.yvel);
+		ctx.save(); 
+		ctx.translate(this.x - this.image.width/2, this.y - this.image.height/2);
+		ctx.rotate(theta);
+		console.log(theta)
+		ctx.drawImage(this.image, 0, 0);
+		ctx.restore(); 
+			this.x += this.xvel;
+			this.y += this.yvel;	
+		}
+	this.rotate = function(x,y){
+		var theta = Math.atan(y/x);
+		theta += ((x<0)?-1:1)*Math.PI/2;
+		return theta;
 	}
 }
 
