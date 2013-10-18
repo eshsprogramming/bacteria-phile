@@ -24,7 +24,7 @@ function Bacteria(){
 	this.image = new Image();
 	this.image.src = "bacteria.png"
 	this.draw = function() {
-		ctx.drawImage(this.image,this.x,this.y,this.image.width,this.image.height);
+		ctx.drawImage(this.image,this.x - this.image.width/2,this.y - this.image.height/2,this.image.width,this.image.height);
 		this.x += this.xvel;
 		this.y += this.yvel;	
 	}
