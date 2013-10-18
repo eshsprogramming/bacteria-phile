@@ -18,7 +18,7 @@ function render(){
 function Bacteria(){
 	this.x = 0;
 	this.y = 0;
-	this.speed = 1;
+	this.speed = 10;
 	this.xvel = 1;
 	this.yvel = 1;
 	this.image = new Image();
