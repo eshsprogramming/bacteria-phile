@@ -28,9 +28,6 @@ function Bacteria(){
 		this.x += this.xvel;
 		this.y += this.yvel;	
 	}
-	this.image.onload = function(){
-		render();
-	}
 }
 
 canvas.onmousedown = function(e){
